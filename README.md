@@ -1,5 +1,8 @@
 # TicTacToe
 
+## Built With
+HTML, CSS, Tailwind, JS
+
 ## Assignment
 Set up your project with HTML, CSS and JavaScript files and get the Git repo all set up.
 
