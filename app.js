@@ -61,7 +61,9 @@ const gameRunner = function () {
         return false;
     };
     const makeMove = (index) => {
-        board.setMarker(index, currentPlayer.mark);
+        while (!board.setMarker(index, currentPlayer.mark)) {
+            // reprompt for a new index for the next move
+        }
         if (checkWin()) {
             return currentPlayer;
         }
@@ -76,10 +78,13 @@ const gameRunner = function () {
 
 const game = gameRunner();
 
-game.initializeGame("john","bob");
-game.makeMove(2);
-game.makeMove(4);
+game.initializeGame("john", "bob");
+game.makeMove(3);
 game.makeMove(5);
 
 // john is X and bob is O
 console.log(game.getBoard());
+
+
+// DOM CODE DOM CODE DOM CODE DOM CODE DOM CODE DOM CODE DOM CODE DOM CODE DOM CODE
+
