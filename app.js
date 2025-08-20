@@ -61,7 +61,7 @@ const gameRunner = function () {
         return false;
     };
     const makeMove = (index) => {
-        board.setMarker(index, currentPlayer.mark());
+        board.setMarker(index, currentPlayer.mark);
         if (checkWin()) {
             return currentPlayer;
         }
@@ -71,5 +71,15 @@ const gameRunner = function () {
             currentPlayer = p1;
         }
     };
-    return { initializeGame, makeMove, checkWin };
+    return { initializeGame, makeMove, checkWin, getBoard: board.getGameboard };
 };
+
+const game = gameRunner();
+
+game.initializeGame("john","bob");
+game.makeMove(2);
+game.makeMove(4);
+game.makeMove(5);
+
+// john is X and bob is O
+console.log(game.getBoard());
