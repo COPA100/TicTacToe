@@ -87,4 +87,8 @@ console.log(game.getBoard());
 
 
 // DOM CODE DOM CODE DOM CODE DOM CODE DOM CODE DOM CODE DOM CODE DOM CODE DOM CODE
+const player1Name = document.getElementById("player1Name");
+const player1Score = document.getElementById("player1Score");
+const player2Name = document.getElementById("player2Name");
+const player2Score = document.getElementById("player2Score");
 
