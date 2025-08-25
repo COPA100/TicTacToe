@@ -8,63 +8,82 @@
     </head>
     <body class="bg-slate-800 text-white">
         <h1 class="text-4xl font-bold flex justify-center py-5">TIC-TAC-TOE</h1>
-        <div class="flex justify-center pb-5 gap-5">
-            <div class="flex flex-col items-end">
-                <h2 id="player1Name">Player 1</h2>
-                <h2 id="player1Score" class="font-semibold text-2xl">0</h2>
-            </div>
-            <div class="h-auto bg-white w-[1px] rounded-md"></div>
-            <div class="flex flex-col">
-                <h2 id="player2Name">Player 2</h2>
-                <h2 id="player2Score" class="font-semibold text-2xl">0</h2>
-            </div>
-        </div>
-        <div class="flex justify-center">
-            <div class="grid grid-rows-3 grid-cols-3 gap-3">
-                <div
-                    id="grid1"
-                    class="w-22 h-22 sm:w-32 sm:h-32 cursor-pointer rounded-lg bg-slate-700 hover:scale-[101%] hover:shadow-md transition-all"
-                ></div>
-                <div
-                    id="grid2"
-                    class="w-22 h-22 sm:w-32 sm:h-32 cursor-pointer rounded-lg bg-slate-700 hover:scale-[101%] hover:shadow-md transition-all"
-                ></div>
-                <div
-                    id="grid3"
-                    class="w-22 h-22 sm:w-32 sm:h-32 cursor-pointer rounded-lg bg-slate-700 hover:scale-[101%] hover:shadow-md transition-all"
-                ></div>
-                <div
-                    id="grid4"
-                    class="w-22 h-22 sm:w-32 sm:h-32 cursor-pointer rounded-lg bg-slate-700 hover:scale-[101%] hover:shadow-md transition-all"
-                ></div>
-                <div
-                    id="grid5"
-                    class="w-22 h-22 sm:w-32 sm:h-32 cursor-pointer rounded-lg bg-slate-700 hover:scale-[101%] hover:shadow-md transition-all"
-                ></div>
-                <div
-                    id="grid6"
-                    class="w-22 h-22 sm:w-32 sm:h-32 cursor-pointer rounded-lg bg-slate-700 hover:scale-[101%] hover:shadow-md transition-all"
-                ></div>
-                <div
-                    id="grid7"
-                    class="w-22 h-22 sm:w-32 sm:h-32 cursor-pointer rounded-lg bg-slate-700 hover:scale-[101%] hover:shadow-md transition-all"
-                ></div>
-                <div
-                    id="grid8"
-                    class="w-22 h-22 sm:w-32 sm:h-32 cursor-pointer rounded-lg bg-slate-700 hover:scale-[101%] hover:shadow-md transition-all"
-                ></div>
-                <div
-                    id="grid9"
-                    class="w-22 h-22 sm:w-32 sm:h-32 cursor-pointer rounded-lg bg-slate-700 hover:scale-[101%] hover:shadow-md transition-all"
-                ></div>
-            </div>
-        </div>
-        <div id="resetBtn" class="flex justify-center py-5 gap-5">
+        <div id="hideInput" class="flex flex-col items-center pb-5 gap-5">
+            <input
+                type="text"
+                class="text-center"
+                placeholder="Enter player 1 name..."
+            />
+            <input
+                type="text"
+                class="text-center"
+                placeholder="Enter player 2 name..."
+            />
             <button
                 class="bg-slate-600 px-10 py-2 rounded-lg cursor-pointer border-1 border-transparent uppercase font-semibold hover:shadow-md hover:scale-[102%] hover:border-white transition-all"
             >
-                Reset
+                SUBMIT
             </button>
         </div>
+        <section id="hideMain" class="hidden">
+            <div class="flex justify-center pb-5 gap-5">
+                <div class="flex flex-col items-end">
+                    <h2 id="player1Name">Player 1</h2>
+                    <h2 id="player1Score" class="font-semibold text-2xl">0</h2>
+                </div>
+                <div class="h-auto bg-white w-[1px] rounded-md"></div>
+                <div class="flex flex-col">
+                    <h2 id="player2Name">Player 2</h2>
+                    <h2 id="player2Score" class="font-semibold text-2xl">0</h2>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <div id="mainGrid" class="grid grid-rows-3 grid-cols-3 gap-3">
+                    <div
+                        data-grid="1"
+                        class="w-22 h-22 sm:w-32 sm:h-32 cursor-pointer rounded-lg bg-slate-700 hover:scale-[101%] hover:shadow-md transition-all"
+                    ></div>
+                    <div
+                        data-grid="2"
+                        class="w-22 h-22 sm:w-32 sm:h-32 cursor-pointer rounded-lg bg-slate-700 hover:scale-[101%] hover:shadow-md transition-all"
+                    ></div>
+                    <div
+                        data-grid="3"
+                        class="w-22 h-22 sm:w-32 sm:h-32 cursor-pointer rounded-lg bg-slate-700 hover:scale-[101%] hover:shadow-md transition-all"
+                    ></div>
+                    <div
+                        data-grid="4"
+                        class="w-22 h-22 sm:w-32 sm:h-32 cursor-pointer rounded-lg bg-slate-700 hover:scale-[101%] hover:shadow-md transition-all"
+                    ></div>
+                    <div
+                        data-grid="5"
+                        class="w-22 h-22 sm:w-32 sm:h-32 cursor-pointer rounded-lg bg-slate-700 hover:scale-[101%] hover:shadow-md transition-all"
+                    ></div>
+                    <div
+                        data-grid="6"
+                        class="w-22 h-22 sm:w-32 sm:h-32 cursor-pointer rounded-lg bg-slate-700 hover:scale-[101%] hover:shadow-md transition-all"
+                    ></div>
+                    <div
+                        data-grid="7"
+                        class="w-22 h-22 sm:w-32 sm:h-32 cursor-pointer rounded-lg bg-slate-700 hover:scale-[101%] hover:shadow-md transition-all"
+                    ></div>
+                    <div
+                        data-grid="8"
+                        class="w-22 h-22 sm:w-32 sm:h-32 cursor-pointer rounded-lg bg-slate-700 hover:scale-[101%] hover:shadow-md transition-all"
+                    ></div>
+                    <div
+                        data-grid="9"
+                        class="w-22 h-22 sm:w-32 sm:h-32 cursor-pointer rounded-lg bg-slate-700 hover:scale-[101%] hover:shadow-md transition-all"
+                    ></div>
+                </div>
+            </div>
+            <div id="resetBtn" class="flex justify-center py-5 gap-5">
+                <button
+                    class="bg-slate-600 px-10 py-2 rounded-lg cursor-pointer border-1 border-transparent uppercase font-semibold hover:shadow-md hover:scale-[102%] hover:border-white transition-all"
+                >
+                    Reset
+                </button>
+            </div>
+        </section>
     </body>
 </html>

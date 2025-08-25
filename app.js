@@ -76,19 +76,38 @@ const gameRunner = function () {
     return { initializeGame, makeMove, checkWin, getBoard: board.getGameboard };
 };
 
-const game = gameRunner();
-
-game.initializeGame("john", "bob");
-game.makeMove(3);
-game.makeMove(5);
-
-// john is X and bob is O
-console.log(game.getBoard());
-
-
 // DOM CODE DOM CODE DOM CODE DOM CODE DOM CODE DOM CODE DOM CODE DOM CODE DOM CODE
 const player1Name = document.getElementById("player1Name");
 const player1Score = document.getElementById("player1Score");
 const player2Name = document.getElementById("player2Name");
 const player2Score = document.getElementById("player2Score");
 
+const resetBtn = document.getElementById("resetBtn");
+
+const mainGrid = document.getElementById("mainGrid");
+
+// event delegation for the boxes in the grid
+mainGrid.addEventListener("click", (e) => {
+    const item = e.target.closest("div");
+    if (item) {
+        const index = item.dataset.grid;
+        game.makeMove(index);
+    }
+});
+
+// reset button functionality
+resetBtn.addEventListener("click", () => {
+    game.resetGameboard;
+});
+
+function renderLibrary() {
+    
+}
+
+// Initialize game Initialize game Initialize game Initialize game 
+
+const game = gameRunner();
+
+game.initializeGame("john", "bob");
+
+console.log(game.getBoard());
