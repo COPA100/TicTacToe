@@ -83,6 +83,7 @@ const player2Name = document.getElementById("player2Name");
 const player2Score = document.getElementById("player2Score");
 
 const resetBtn = document.getElementById("resetBtn");
+const submitBtn = document.getElementById("submitBtn");
 
 const mainGrid = document.getElementById("mainGrid");
 
@@ -100,14 +101,19 @@ resetBtn.addEventListener("click", () => {
     game.resetGameboard;
 });
 
-function renderLibrary() {
-    
-}
+submitBtn.addEventListener("click", () => {
+    const p1Name = document.getElementById("inputP1").value;
+    console.log(p1Name);
+    const p2Name = document.getElementById("inputP2").value;
+    const game = gameRunner();
+    game.initializeGame(p1Name, p2Name);
 
-// Initialize game Initialize game Initialize game Initialize game 
+    player1Name.innerHTML = p1Name;
+    player2Name.innerHTML = p2Name;
 
-const game = gameRunner();
+    document.getElementById("hideInput").classList.remove("flex");
+    document.getElementById("hideInput").classList.add("hidden");
+    document.getElementById("hideMain").classList.remove("hidden");
+});
 
-game.initializeGame("john", "bob");
-
-console.log(game.getBoard());
+function renderLibrary() {}
